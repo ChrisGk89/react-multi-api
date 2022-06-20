@@ -1,0 +1,23 @@
+.weather-container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: inherit;
+  background-image: url("../assets/image3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  color: white;
+  width: 50%;
+  height: auto;
+  padding: 5px 20px 40px 20px;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 10px 10px 15px lightblue;
+  font-size: 1em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

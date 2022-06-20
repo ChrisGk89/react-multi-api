@@ -1,11 +1,12 @@
-import React from 'react';
-import { useGetWeatherByCityNameQuery } from '../app/weatherApi';
+import React from "react";
+import { useGetWeatherByCityNameQuery } from "../app/weatherApi";
+import "./Weather.css";
 
 const Weather = () => {
   const { data, isFetching, isLoading } =
-    useGetWeatherByCityNameQuery('Athens');
+    useGetWeatherByCityNameQuery("Athens");
   return (
-    <div className="tr">
+    <div className="weather-container">
       <h1>Weather</h1>
       {!isFetching && !isLoading && (
         <>
