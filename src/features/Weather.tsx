@@ -11,7 +11,7 @@ const Weather = () => {
         <>
           <h2>{`City: ` + data?.name}</h2>
           <h3>{data.weather[0]?.description}</h3>
-          <h3>{`Average temperature: ` + data.main.temp}</h3>
+          <h3>{`Average temperature: ` + Math.floor(data.main.temp)}</h3>
         </>
       )}
     </div>
