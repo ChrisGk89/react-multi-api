@@ -1,8 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { nasaApi } from './nasaApi';
-// Or from '@reduxjs/toolkit/query/react'
 import { setupListeners } from '@reduxjs/toolkit/query';
-import { weatherApi } from './weatherApi';
 import { httpApi } from './httpApi';
 
 // const rootReducer = combineReducers({
