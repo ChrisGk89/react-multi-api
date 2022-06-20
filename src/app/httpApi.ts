@@ -1,7 +1,8 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // initialize an empty api service that we'll inject endpoints into later as needed
 export const httpApi = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: '' }),
+  reducerPath: "httpAPI",
+  baseQuery: fetchBaseQuery({ baseUrl: "" }),
   endpoints: () => ({}),
 });
