@@ -4,9 +4,8 @@ import { useGetWeatherByCityNameQuery } from '../app/weatherApi';
 const Weather = () => {
   const { data, isFetching, isLoading } =
     useGetWeatherByCityNameQuery('Athens');
-  console.log(data);
   return (
-    <div>
+    <div className="tr">
       <h1>Weather</h1>
       {!isFetching && !isLoading && (
         <>
