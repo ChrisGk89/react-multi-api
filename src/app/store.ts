@@ -1,17 +1,25 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { nasaApi } from "./nasaApi";
+// Or from '@reduxjs/toolkit/query/react'
+import { setupListeners } from "@reduxjs/toolkit/query";
+import { weatherApi } from "./weatherApi";
+
+// const rootReducer = combineReducers({
+//   [nasaApi.reducerPath]: nasaApi.reducer,
+//   [weatherApi.reducerPath]: weatherApi.reducer,
+// });
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    [nasaApi.reducerPath]: nasaApi.reducer,
+    // [weatherApi.reducerPath]: weatherApi.reducer,
   },
+  // @ts-ignore
+  middleware: (getDefaultMiddleware) => [
+    ...getDefaultMiddleware(),
+    nasaApi.middleware,
+  ],
 });
 
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
->;
+// see setupListeners docs - takes an optional callback as the 2nd arg for customization
+setupListeners(store.dispatch);
