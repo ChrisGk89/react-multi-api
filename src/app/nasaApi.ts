@@ -1,13 +1,11 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { httpApi } from './httpApi';
+const baseUrl = 'https://api.nasa.gov/planetary/apod';
+const api_key = 'FkzMiOMDEIyNco5RxdlUbkgfgAzZmeaPHioJxlyh';
 
-export const nasaApi = createApi({
-  baseQuery: fetchBaseQuery({
-    baseUrl: `https://api.nasa.gov/planetary/apod`,
-  }),
+export const nasaApi = httpApi.injectEndpoints({
   endpoints: (builder) => ({
     getApodByDate: builder.query<any, any>({
-      query: (date) =>
-        `?api_key=FkzMiOMDEIyNco5RxdlUbkgfgAzZmeaPHioJxlyh&date=${date}`,
+      query: (date) => `${baseUrl}?api_key=${api_key}&date=${date}`,
     }),
   }),
 });

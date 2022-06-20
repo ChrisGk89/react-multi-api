@@ -1,8 +1,9 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { nasaApi } from "./nasaApi";
+import { configureStore } from '@reduxjs/toolkit';
+import { nasaApi } from './nasaApi';
 // Or from '@reduxjs/toolkit/query/react'
-import { setupListeners } from "@reduxjs/toolkit/query";
-import { weatherApi } from "./weatherApi";
+import { setupListeners } from '@reduxjs/toolkit/query';
+import { weatherApi } from './weatherApi';
+import { httpApi } from './httpApi';
 
 // const rootReducer = combineReducers({
 //   [nasaApi.reducerPath]: nasaApi.reducer,
@@ -11,13 +12,12 @@ import { weatherApi } from "./weatherApi";
 
 export const store = configureStore({
   reducer: {
-    [nasaApi.reducerPath]: nasaApi.reducer,
-    // [weatherApi.reducerPath]: weatherApi.reducer,
+    [httpApi.reducerPath]: httpApi.reducer,
   },
   // @ts-ignore
   middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware(),
-    nasaApi.middleware,
+    httpApi.middleware,
   ],
 });
 
