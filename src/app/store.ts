@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { httpApi } from './httpApi';
+import counterSlice from '../features/CounterSlice';
 
 // const rootReducer = combineReducers({
 //   [nasaApi.reducerPath]: nasaApi.reducer,
@@ -9,6 +10,7 @@ import { httpApi } from './httpApi';
 
 export const store = configureStore({
   reducer: {
+    counter: counterSlice,
     [httpApi.reducerPath]: httpApi.reducer,
   },
   // @ts-ignore
