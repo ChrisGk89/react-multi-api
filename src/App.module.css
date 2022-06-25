@@ -2,13 +2,13 @@
   background-color: #e6e6e8;
 }
 
-.App{
-  text-align: center;
+.App {
+  /* text-align: center; */
 }
 
-/*background-image: url("./assets/image2.jpg");
-background-repeat: no-repeat;
-width: auto;
-height: auto; 
-margin: 0;
-padding: 0;*/
+.weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 32px;
+}

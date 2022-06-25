@@ -1,14 +1,14 @@
-import React from "react";
-import { useId, useState } from "react";
-import { useGetWeatherByCityNameQuery } from "../app/weatherApi";
-import Button from "@mui/material/Button";
-import "./Weather.css";
+import React from 'react';
+import { useId, useState } from 'react';
+import { useGetWeatherByCityNameQuery, weatherApi } from '../app/weatherApi';
+import Button from '@mui/material/Button';
+import './Weather.css';
 
 const Weather = () => {
   const id = useId();
-  const [input, setInput] = useState(""); // '' is the initial state value
+  const [input, setInput] = useState(''); // '' is the initial state value
   const { data, isFetching, isLoading } =
-    useGetWeatherByCityNameQuery("Athens");
+    useGetWeatherByCityNameQuery('Athens');
 
   return (
     <div className="weather-container">

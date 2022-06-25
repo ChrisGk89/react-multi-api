@@ -4,6 +4,7 @@ import Apod from './features/Apod';
 import Weather from './features/Weather';
 import Header from './features/Header';
 import Counter from './features/Counter';
+import WeatherContainer from './features/WeatherContainer';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <Header />
       <Counter />
       <Apod />
-      <Weather />
+      {/* <Weather /> */}
+      <WeatherContainer />
     </div>
   );
 }
